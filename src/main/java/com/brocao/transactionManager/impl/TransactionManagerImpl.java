@@ -4,8 +4,6 @@ import com.brocao.transactionManager.TransactionManager;
 import com.brocao.utils.Panic;
 import com.brocao.utils.Parser;
 
-
-import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
@@ -18,7 +16,7 @@ public class TransactionManagerImpl implements TransactionManager {
     /**
      * XID头文件长度：记录文件管理的事务个数
      */
-    static final int LEN_XID_HEADER_LENGTH = 8;
+    public static final int LEN_XID_HEADER_LENGTH = 8;
 
     /**
      * 每个事务的占用长度
@@ -28,11 +26,11 @@ public class TransactionManagerImpl implements TransactionManager {
     /**
      * 事务的三种状态
      */
-    private static final byte FILED_TRAN_ACTIVE = 0;
+    private static final byte FIELD_TRAN_ACTIVE = 0;
 
     private static final byte FIELD_TRAN_COMMITTED = 1;
 
-    private static final byte FILED_TRAN_ABORTED = 2;
+    private static final byte FIELD_TRAN_ABORTED = 2;
 
     /**
      * 超级事务，永远为commited状态
@@ -42,7 +40,7 @@ public class TransactionManagerImpl implements TransactionManager {
     /**
      * XID文件后缀
      */
-    static final String XID_SUFFIX = ".xid";
+    public static final String XID_SUFFIX = ".xid";
 
     private RandomAccessFile file;
     private FileChannel fileChannel;
@@ -52,10 +50,10 @@ public class TransactionManagerImpl implements TransactionManager {
     /**
      *
      * 构造方法
-     * @param file
-     * @param fileChannel
+     * @param file 随机访问文件
+     * @param fileChannel 通道
      */
-    TransactionManagerImpl(RandomAccessFile file,FileChannel fileChannel) {
+    public TransactionManagerImpl(RandomAccessFile file,FileChannel fileChannel) {
         this.file = file;
         this.fileChannel = fileChannel;
         counterLock = new ReentrantLock();
@@ -104,11 +102,32 @@ public class TransactionManagerImpl implements TransactionManager {
         counterLock.lock();
         try {
             long xid = xidCounter + 1;
-            updateXID(xid,FILED_TRAN_ACTIVE);
+            updateXID(xid,FIELD_TRAN_ACTIVE);
             incrXIDCounter();
             return xid;
         } finally {
             counterLock.unlock();
+        }
+    }
+
+    /**
+     * 自增xidCounter
+     */
+    private void incrXIDCounter() {
+        xidCounter++;
+        //更新头
+        ByteBuffer buf = ByteBuffer.wrap(Parser.long2Byte(xidCounter));
+        try {
+            fileChannel.position(0);
+            fileChannel.write(buf);
+        } catch (IOException e) {
+            Panic.panic(e);
+        }
+        try {
+            //强制同步缓存内容到文件中
+            fileChannel.force(false);
+        } catch (IOException e) {
+            Panic.panic(e);
         }
     }
 
@@ -132,31 +151,50 @@ public class TransactionManagerImpl implements TransactionManager {
 
     @Override
     public void commit(long xid) {
-
+        updateXID(xid,FIELD_TRAN_COMMITTED);
     }
 
     @Override
     public void abort(long xid) {
-
+        updateXID(xid,FIELD_TRAN_ABORTED);
     }
 
     @Override
     public boolean isActive(long xid) {
-        return false;
+        return checkXID(xid,FIELD_TRAN_ACTIVE);
     }
 
     @Override
     public boolean isCommited(long xid) {
-        return false;
+        return checkXID(xid,FIELD_TRAN_COMMITTED);
     }
 
     @Override
     public boolean isAborted(long xid) {
-        return false;
+        return checkXID(xid,FIELD_TRAN_ABORTED);
     }
 
     @Override
     public void close() {
-
+        try {
+            fileChannel.close();
+            file.close();
+        } catch (IOException e) {
+            Panic.panic(e);
+        }
     }
+
+    private boolean checkXID(long xid,byte status) {
+        long offset = getXidPosition(xid);
+        //fileChannel.read(offset);
+        ByteBuffer buf = ByteBuffer.wrap(new byte[XID_FIELD_SIZE]);
+        try {
+            fileChannel.position(offset);
+            fileChannel.read(buf);
+        } catch (IOException e) {
+            Panic.panic(e);
+        }
+        return buf.array()[0] == status;
+    }
+
 }

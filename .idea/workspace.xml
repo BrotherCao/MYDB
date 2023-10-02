@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="81fcc407-dab9-476a-b3e8-0712219e4a98" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/brocao/transactionManager/impl/TransactionManagerImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/brocao/utils/Panic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/brocao/utils/ParseStringRes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/brocao/utils/Parser.java" afterDir="false" />
+    <list default="true" id="81fcc407-dab9-476a-b3e8-0712219e4a98" name="Changes" comment="tm">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tm/FileTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tm/TmTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/brocao/transactionManager/TransactionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brocao/transactionManager/TransactionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brocao/transactionManager/impl/TransactionManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brocao/transactionManager/impl/TransactionManagerImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,12 +44,70 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "17",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
 }]]></component>
+  <component name="RunManager" selected="JUnit.TmTest.tmTestOpen">
+    <configuration name="FileTest.fileTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MYDB" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tm.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tm" />
+      <option name="MAIN_CLASS_NAME" value="tm.FileTest" />
+      <option name="METHOD_NAME" value="fileTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TmTest.tmTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MYDB" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tm.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tm" />
+      <option name="MAIN_CLASS_NAME" value="tm.TmTest" />
+      <option name="METHOD_NAME" value="tmTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TmTest.tmTestOpen" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MYDB" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tm.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tm" />
+      <option name="MAIN_CLASS_NAME" value="tm.TmTest" />
+      <option name="METHOD_NAME" value="tmTestOpen" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TmTest.tmTestOpen" />
+        <item itemvalue="JUnit.TmTest.tmTest" />
+        <item itemvalue="JUnit.FileTest.fileTest" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -59,8 +116,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1696150867474</updated>
-      <workItem from="1696150869005" duration="8035000" />
+      <workItem from="1696150869005" duration="8073000" />
+      <workItem from="1696226286365" duration="3628000" />
     </task>
+    <task id="LOCAL-00001" summary="tm">
+      <created>1696168226524</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1696168226524</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -76,5 +142,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="tm" />
+    <option name="LAST_COMMIT_MESSAGE" value="tm" />
   </component>
 </project>
