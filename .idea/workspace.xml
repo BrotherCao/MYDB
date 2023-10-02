@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="81fcc407-dab9-476a-b3e8-0712219e4a98" name="Changes" comment="tm">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tm/FileTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tm/TmTest.java" afterDir="false" />
+    <list default="true" id="81fcc407-dab9-476a-b3e8-0712219e4a98" name="Changes" comment="完成事务管理模块，完成相应单元测试。">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/brocao/common/AbstractCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/brocao/common/SubArray.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/brocao/transactionManager/TransactionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brocao/transactionManager/TransactionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/brocao/transactionManager/impl/TransactionManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brocao/transactionManager/impl/TransactionManagerImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +115,7 @@
       <option name="presentableId" value="Default" />
       <updated>1696150867474</updated>
       <workItem from="1696150869005" duration="8073000" />
-      <workItem from="1696226286365" duration="3628000" />
+      <workItem from="1696226286365" duration="9014000" />
     </task>
     <task id="LOCAL-00001" summary="tm">
       <created>1696168226524</created>
@@ -126,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1696168226524</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="完成事务管理模块，完成相应单元测试。">
+      <created>1696230131158</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1696230131158</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,6 +150,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="tm" />
-    <option name="LAST_COMMIT_MESSAGE" value="tm" />
+    <MESSAGE value="完成事务管理模块，完成相应单元测试。" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成事务管理模块，完成相应单元测试。" />
   </component>
 </project>
