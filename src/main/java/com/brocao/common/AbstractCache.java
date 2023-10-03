@@ -3,6 +3,7 @@ package com.brocao.common;
 import java.util.HashMap;
 import java.util.Set;
 import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 public abstract class AbstractCache<T> {
 
@@ -17,6 +18,14 @@ public abstract class AbstractCache<T> {
     private int count  = 0; //缓存中缓存的个数
 
     private Lock lock; //锁
+
+    public AbstractCache(int maxResource) {
+        this.maxResource = maxResource;
+        cache = new HashMap<>();
+        references = new HashMap<>();
+        getting = new HashMap<>();
+        lock = new ReentrantLock();
+    }
 
     /**
      * 获取一个数据
