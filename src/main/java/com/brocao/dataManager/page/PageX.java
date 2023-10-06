@@ -67,4 +67,10 @@ public class PageX {
         pg.setDirty(true);
         System.arraycopy(raw,0,pg.getData(),offset,raw.length);
     }
+
+    public static byte[] initRaw() {
+        byte[] raw = new byte[PAGE_SIZE];
+        setFSO(raw,OF_DATA);
+        return raw;
+    }
 }

@@ -4,9 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="81fcc407-dab9-476a-b3e8-0712219e4a98" name="Changes" comment="完成日志部分的定义">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/brocao/dataManager/Recover.java" afterDir="false" />
+    <list default="true" id="81fcc407-dab9-476a-b3e8-0712219e4a98" name="Changes" comment="完成恢复策略">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/brocao/dataManager/DataManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/brocao/dataManager/DataManagerImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/brocao/dataManager/PageIndex/PageIndex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/brocao/dataManager/PageIndex/PageInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/brocao/dataManager/dataItem/DataItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/brocao/dataManager/dataItem/DataItemImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/brocao/utils/Types.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/brocao/versionManager/Entry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/brocao/versionManager/LockTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/brocao/versionManager/Transaction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/brocao/versionManager/VersionManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/brocao/versionManager/VersionManagerImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/brocao/versionManager/Visibility.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brocao/dataManager/Recover.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brocao/dataManager/Recover.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brocao/dataManager/page/PageCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brocao/dataManager/page/PageCache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brocao/dataManager/page/PageCacheImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brocao/dataManager/page/PageCacheImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brocao/dataManager/page/PageX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brocao/dataManager/page/PageX.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +133,9 @@
       <workItem from="1696150869005" duration="8073000" />
       <workItem from="1696226286365" duration="17014000" />
       <workItem from="1696302690609" duration="8171000" />
-      <workItem from="1696404292900" duration="5804000" />
+      <workItem from="1696404292900" duration="11955000" />
+      <workItem from="1696475005016" duration="14103000" />
+      <workItem from="1696560366342" duration="11326000" />
     </task>
     <task id="LOCAL-00001" summary="tm">
       <created>1696168226524</created>
@@ -154,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1696340541519</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="完成恢复策略">
+      <created>1696421310296</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1696421310296</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,6 +202,7 @@
     <MESSAGE value="完成缓存框架" />
     <MESSAGE value="完成了页的定义" />
     <MESSAGE value="完成日志部分的定义" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成日志部分的定义" />
+    <MESSAGE value="完成恢复策略" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成恢复策略" />
   </component>
 </project>

@@ -1,5 +1,7 @@
 package com.brocao.dataManager;
 
+import com.brocao.common.SubArray;
+import com.brocao.dataManager.dataItem.DataItem;
 import com.brocao.dataManager.log.Logger;
 import com.brocao.dataManager.page.Page;
 import com.brocao.dataManager.page.PageCache;
@@ -7,6 +9,7 @@ import com.brocao.dataManager.page.PageX;
 import com.brocao.transactionManager.TransactionManager;
 import com.brocao.utils.Panic;
 import com.brocao.utils.Parser;
+import com.google.common.primitives.Bytes;
 import org.checkerframework.checker.units.qual.A;
 
 import java.util.*;
@@ -243,4 +246,23 @@ public class Recover {
     private static boolean isInsertLog(byte[] log) {
         return log[0] == LOG_TYPE_INSERT;
     }
+
+    public static byte[] insertLog(long xid,Page page,byte[] raw) {
+        byte[] logTypeRaw = {LOG_TYPE_INSERT};
+        byte[] xidRaw = Parser.long2Byte(xid);
+        byte[] pgNoRaw = Parser.int2Byte(page.getPageNumber());
+        byte[] offsetRaw = Parser.short2Byte(PageX.getFSO(page));
+        return Bytes.concat(logTypeRaw,xidRaw,pgNoRaw,offsetRaw,raw);
+    }
+
+    public static byte[] updateLog(long xid,DataItem dataItem) {
+        byte[] logType = {LOG_TYPE_UPDATE};
+        byte[] xidRaw = Parser.long2Byte(xid);
+        byte[] uidRaw = Parser.long2Byte(dataItem.getUid());
+        byte[] oldRaw = dataItem.getOldRaw();
+        SubArray raw = dataItem.getRaw();
+        byte[] newRaw = Arrays.copyOfRange(raw.raw, raw.start, raw.end);
+        return Bytes.concat(logType,xidRaw,uidRaw,oldRaw,newRaw);
+    }
+
 }
